@@ -62,7 +62,27 @@ app.get('/products',function(req,res){
                     res.send(books);
                 });
 });
-app.get('/:id',  (req, res) => {
+app.get('/authors',function(req,res){
+  Authordata.find()
+  .then(function(authors){
+     res.send(authors);
+    })
+    .catch(function(error){
+      console.log(error)
+     })
+});
+app.get('/author/:id',  (req, res) => {
+  
+  const id = req.params.id;
+  Authordata.findOne({"_id":id})
+    .then((author)=>{
+        res.send(author);
+    })
+    .catch(function(error){
+      console.log(error)
+     })
+})
+app.get('/book/:id',  (req, res) => {
   
   const id = req.params.id;
     Bookdata.findOne({"_id":id})
@@ -114,20 +134,8 @@ app.get('/:id',  (req, res) => {
    var author = new Authordata(author);
    author.save();
 });
-app.get('/authors',function(req,res){
-    Authordata.find()
-                .then(function(authors){
-                    res.send(authors);
-                });
-});
-app.get('/author/:id',  (req, res) => {
-  
-  const id = req.params.id;
-  Authordata.findOne({"_id":id})
-    .then((author)=>{
-        res.send(author);
-    });
-})
+
+
 
     app.delete('/removeauthor/:id',(req,res)=>{
    
@@ -137,13 +145,16 @@ app.get('/author/:id',  (req, res) => {
           console.log('success')
           res.send();
       })
+      .catch(function(error){
+        console.log(error)
+       })
     })
 
     app.put('/updateauthor',(req,res)=>{
       console.log(req.body)
       id=req.body._id,
       authorname =req.body.authorname,
-      description =req.body.product.description,
+      description =req.body.description,
       imageUrl = req.body.imageUrl
       Authordata.findByIdAndUpdate({"_id":id},
                                   {$set:{
@@ -152,6 +163,9 @@ app.get('/author/:id',  (req, res) => {
                                   "imageUrl":imageUrl}})
      .then(function(){
          res.send();
+     })
+     .catch(function(error){
+      console.log(error)
      })
    })
 

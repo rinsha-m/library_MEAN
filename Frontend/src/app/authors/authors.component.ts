@@ -9,7 +9,8 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class AuthorsComponent {
   pageTitle: string = 'Author List';
-  imageWidth: number = 50;
+  imageWidth: number = 100;
+  imageHeight:number=100;
   imageMargin: number = 2;
   showImage: boolean = false;
 
@@ -30,9 +31,9 @@ export class AuthorsComponent {
   })
   }
  
-  editAuthor(author:any)
+  editAuthor(authors:any)
   {
-    localStorage.setItem("editAuthorId", author._id.toString());
+    localStorage.setItem("editAuthorId", authors._id.toString());
     this.router.navigate(['updateauthor']);
 
   }

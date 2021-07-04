@@ -9,7 +9,8 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class ProductsComponent {
   pageTitle: string = 'Book List';
-  imageWidth: number = 50;
+  imageWidth: number = 100;
+  imageHeight:number = 100;
   imageMargin: number = 2;
   showImage: boolean = false;
 

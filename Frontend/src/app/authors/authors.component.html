@@ -25,7 +25,8 @@
                   <td><img *ngIf='showImage'
                     [src] = 'author.imageUrl' 
                     [title] = 'author.authorname'
-                    [style.width.px] = 'imageWidth' 
+                    [style.width.px] = 'imageWidth'
+                    [style.height.px] = 'imageHeight' 
                     [style.margin.px] = 'imageMargin'></td>
                   <td>{{ author.authorname }}</td>
                   <td>{{ author.description }}</td>

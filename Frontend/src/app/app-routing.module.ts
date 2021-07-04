@@ -41,7 +41,7 @@ const routes: Routes = [
   component: NewauthorComponent,
 },
 {
-  path:'updateauthor ',
+  path:'updateauthor',
   component:UpdateAuthorComponent
 }
 

@@ -13,7 +13,7 @@ export class ProductService {
     imageUrl:''}
   constructor( private http:HttpClient) { }
   getProduct(id:any){
-    return this.http.get("http://localhost:3000/"+id);
+    return this.http.get("http://localhost:3000/book/"+id);
   }
   getProducts(){
     return this.http.get("http://localhost:3000/products");

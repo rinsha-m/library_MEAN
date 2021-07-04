@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/lib',{
     useUnifiedTopology: true,
-    useNewUrlParser: true 
+    useNewUrlParser: true,
+    useFindAndModify:false 
 });
 const Schema = mongoose.Schema;
 

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/lib',{
+mongoose.connect('mongodb+srv://username1:user1@myfiles.d1yi4.mongodb.net/LIb?retryWrites=true&w=majority',{
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify:false 
@@ -13,7 +13,7 @@ var AuthorSchema = new Schema({
     imageUrl : String
 });
 
-var Authordata = mongoose.model('author', AuthorSchema);                        //UserData is the model and NewBookData is the schema
+var Authordata = mongoose.model('author', AuthorSchema);                        
 
 module.exports = Authordata;
 

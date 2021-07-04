@@ -1,0 +1,40 @@
+<div class='card'>
+    <form (ngSubmit)="editProduct()" ngNativeValidate>
+<div class='card-header'>
+ Edit Book
+</div>
+<div class='card-body'>            
+  <div class='table-responsive'>
+    <table class='table'>       
+    
+      <tbody>    
+            <tr>
+                <td><label> Name of the book</label></td>
+                <td><input type="text" name="p_name" [(ngModel)]="bookItem.book"required/></td>                  
+              </tr>  
+              <tr>
+                <td><label>Author of the book</label></td>
+                <td><input type="text" name="p_code" [(ngModel)]="bookItem.author"required/></td>                  
+              </tr>  
+              <tr>
+                <td><label>Genre of the book</label></td>
+                <td><input type="text" name="p_date" [(ngModel)]="bookItem.genre"required/></td>                  
+              </tr>  
+              <tr>
+                <td><label>Description of the book</label></td>
+                <td><input type="text" name="p_desc" [(ngModel)]="bookItem.description"required/></td>                  
+              </tr>   
+              <tr>
+                <td><label>Book imageUrl</label></td>
+                <td><input type="text" name="p_image" [(ngModel)]="bookItem.imageUrl"required/></td>                  
+              </tr>  
+              <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>                 
+              </tr>             
+      </tbody>
+    </table>
+  </div>
+</div>
+</form>
+</div>

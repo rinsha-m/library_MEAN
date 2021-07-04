@@ -1,0 +1,32 @@
+<div class='card'>
+    <form (ngSubmit)="editAuthor()" ngNativeValidate>
+<div class='card-header'>
+ Edit Author
+</div>
+<div class='card-body'>            
+  <div class='table-responsive'>
+    <table class='table'>       
+    
+            <tbody>    
+                <tr>
+                    <td><label>Name of the author</label></td>
+                    <td><input type="text" name="p_name" [(ngModel)]="authorItem.authorname"required/></td>                  
+                </tr> 
+                <tr>
+                    <td><label>Description about the author</label></td>
+                    <td><input type="text" name="p_desc" [(ngModel)]="authorItem.description"required/></td>                  
+                </tr>    
+                <tr>
+                    <td><label>Author imageUrl</label></td>
+                    <td><input type="text" name="p_image" [(ngModel)]="authorItem.imageUrl"required/></td>                  
+                </tr> 
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit" /></td>                 
+                </tr>             
+            </tbody>
+    </table>
+  </div>
+</div>
+</form>
+</div>
